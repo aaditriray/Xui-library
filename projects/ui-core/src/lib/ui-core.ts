@@ -8,7 +8,6 @@ import { Component } from '@angular/core';
       ui-core works!
     </p>
   `,
-  styles: ``,
 })
 export class UiCore {
 

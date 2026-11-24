@@ -4,7 +4,6 @@ import { Component, input, output } from '@angular/core';
   selector: 'xui-checkbox',
   imports: [],
   templateUrl: './checkbox.html',
-  styleUrl: './checkbox.scss',
 })
 export class Checkbox {
   readonly id = input('xui-checkbox');

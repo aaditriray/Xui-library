@@ -1,0 +1,9 @@
+:host {
+  display: grid;
+  gap: 0.375rem;
+}
+
+textarea.xui-form-control {
+  min-height: 6rem;
+  resize: vertical;
+}

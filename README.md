@@ -60,19 +60,35 @@ Templates
 projects/
 └── ui-core/
     └── src/
+        ├── styles.scss
+        ├── public-api.ts
         └── lib/
             ├── atoms/
+            │   ├── button/
+            │   ├── checkbox/
+            │   ├── textbox/
+            │   └── additional-atoms.ts
             ├── molecules/
+            │   ├── form-field/
+            │   └── additional-molecules.ts
             ├── organisms/
+            │   ├── modal/
+            │   └── additional-organisms.ts
             ├── templates/
+            │   └── templates.ts
             ├── directives/
             ├── pipes/
             ├── services/
             └── tokens/
+
 .storybook/
-└── main.ts
-└── preview.ts
+├── main.ts
+├── preview.ts
+└── tsconfig.json
 ```
+
+Component stories are colocated as `*.stories.ts` files and the public component
+API is exported from `projects/ui-core/src/public-api.ts`.
 
 ---
 
@@ -120,6 +136,11 @@ projects/
 - Dashboard
 - Search
 - Master Detail
+
+Each component in the inventory has an Angular implementation and a Storybook
+example. Interactive controls use semantic HTML, expose typed inputs and
+outputs, and provide keyboard-friendly native behavior or the appropriate
+composite-widget keyboard interaction.
 
 ---
 
@@ -273,27 +294,61 @@ is removed.
 ## Colors
 
 ```scss
-$primary: #0057b8;
-$success: #198754;
-$warning: #ffc107;
-$danger: #dc3545;
+:root {
+  --xui-primary: #0057b8;
+  --xui-primary-dark: #174a7c;
+  --xui-danger: #b42318;
+  --xui-focus: #0b63ce;
+}
 ```
 
 ## Spacing
 
 ```scss
-$space-1: 4px;
-$space-2: 8px;
-$space-3: 12px;
-$space-4: 16px;
+:root {
+  --xui-space-1: 4px;
+  --xui-space-2: 8px;
+  --xui-space-3: 12px;
+  --xui-space-4: 16px;
+  --xui-space-5: 24px;
+  --xui-space-6: 32px;
+}
 ```
 
 ## Border Radius
 
 ```scss
-$radius-sm: 4px;
-$radius-md: 8px;
-$radius-lg: 12px;
+:root {
+  --xui-radius-sm: 4px;
+  --xui-radius-md: 8px;
+  --xui-radius-lg: 12px;
+}
+```
+
+---
+
+# Styling
+
+Shared design tokens and common component rules live in
+`projects/ui-core/src/styles.scss`. It defines the color, spacing, focus,
+typography, form-control, target-size, visually-hidden, and reduced-motion
+defaults used throughout the library.
+
+The Angular demo imports this file from `src/styles.scss`, and Storybook loads
+the same stylesheet from `.storybook/preview.ts`. Keep shared CSS and design
+tokens in this global file; do not duplicate them in component styles.
+
+Each component's SCSS file should contain only rules unique to that component,
+such as its layout, variant, or specialized state. Components without unique
+styles do not need a component stylesheet. Keep component styles in external
+`.scss` files referenced with `styleUrl`; do not add inline `styles` or `style`
+attributes.
+
+The library build includes `styles.scss` as a package asset. Consumers should
+load it once in their application's global stylesheet:
+
+```scss
+@use 'ui-core/styles';
 ```
 
 ---

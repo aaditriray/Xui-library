@@ -1,0 +1,27 @@
+aside {
+  width: min(24rem, 100%);
+  padding: 1rem;
+  border-left: 1px solid var(--xui-border-strong);
+  background: var(--xui-surface);
+  color: var(--xui-text);
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+h2 {
+  font-size: 1.25rem;
+}
+
+button {
+  min-width: var(--xui-control-height);
+  padding: 0.5rem;
+  border: 2px solid var(--xui-primary-dark);
+  border-radius: var(--xui-radius);
+  background: var(--xui-surface);
+  color: var(--xui-primary-dark);
+}

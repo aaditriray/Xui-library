@@ -1,0 +1,50 @@
+ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: var(--xui-control-height);
+  color: var(--xui-text-secondary);
+}
+
+li[aria-current='step'] {
+  color: var(--xui-primary-dark);
+  font-weight: 700;
+}
+
+.number {
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+}
+
+.controls {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--xui-primary-dark);
+  border-radius: var(--xui-radius);
+  color: var(--xui-primary-dark);
+  background: var(--xui-surface);
+  font-weight: 700;
+}
+
+button:disabled {
+  border-color: var(--xui-border);
+  color: var(--xui-border);
+}

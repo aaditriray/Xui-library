@@ -1,0 +1,20 @@
+.spinner {
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 3px solid #b2c4d6;
+  border-top-color: var(--xui-primary);
+  border-radius: 50%;
+  animation: xui-spinner-rotate 0.8s linear infinite;
+}
+
+@keyframes xui-spinner-rotate {
+  to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spinner {
+    animation: none;
+    border-style: dotted;
+  }
+}

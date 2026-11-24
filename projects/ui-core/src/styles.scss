@@ -1,0 +1,135 @@
+:root {
+  color-scheme: light;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #172b4d;
+  background: #f8fafc;
+  line-height: 1.5;
+
+  --xui-primary: #0057b8;
+  --xui-primary-dark: #174a7c;
+  --xui-text: #172b4d;
+  --xui-text-muted: #475467;
+  --xui-text-secondary: #344054;
+  --xui-border: #667085;
+  --xui-border-subtle: #d0d5dd;
+  --xui-border-strong: #98a2b3;
+  --xui-border-disabled: #e5e7eb;
+  --xui-surface-neutral: #eaecf0;
+  --xui-focus: #0b63ce;
+  --xui-danger: #b42318;
+  --xui-danger-surface: #fee4e2;
+  --xui-success-text: #185c37;
+  --xui-success-surface: #dcfae6;
+  --xui-warning-text: #7a2e0e;
+  --xui-warning-surface: #fef0c7;
+  --xui-danger-text: #912018;
+  --xui-surface: #fff;
+  --xui-surface-muted: #f2f4f7;
+  --xui-space-1: 4px;
+  --xui-space-2: 8px;
+  --xui-space-3: 12px;
+  --xui-space-4: 16px;
+  --xui-space-5: 24px;
+  --xui-space-6: 32px;
+  --xui-radius-sm: 4px;
+  --xui-radius-md: 8px;
+  --xui-radius-lg: 12px;
+  --xui-radius: var(--xui-radius-md);
+  --xui-control-height: 44px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  margin: 0;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  min-height: var(--xui-control-height);
+}
+
+:focus-visible {
+  outline: 3px solid var(--xui-focus);
+  outline-offset: 3px;
+}
+
+.xui-field-label {
+  color: var(--xui-text);
+  font-weight: 700;
+}
+
+.xui-hint {
+  margin: 0.375rem 0;
+  color: var(--xui-text-muted);
+}
+
+.xui-error {
+  margin: 0.375rem 0 0;
+  color: var(--xui-danger);
+  font-weight: 700;
+}
+
+.xui-form-control {
+  width: 100%;
+  min-height: var(--xui-control-height);
+  padding: 0.625rem 0.75rem;
+  border: 2px solid var(--xui-border);
+  border-radius: var(--xui-radius);
+  background: var(--xui-surface);
+  color: var(--xui-text);
+  font: inherit;
+}
+
+.xui-form-control[aria-invalid='true'] {
+  border-color: var(--xui-danger);
+}
+
+.xui-choice {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  min-height: var(--xui-control-height);
+  color: var(--xui-text);
+}
+
+.xui-choice input {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--xui-primary);
+}
+
+.xui-checkbox {
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.xui-visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

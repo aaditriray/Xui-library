@@ -1,0 +1,24 @@
+form {
+  display: grid;
+  gap: 0.375rem;
+}
+
+.row {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.row input.xui-form-control {
+  flex: 1;
+  min-width: 0;
+  width: auto;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  border: 0;
+  border-radius: var(--xui-radius);
+  background: var(--xui-primary);
+  color: var(--xui-surface);
+  font-weight: 700;
+}

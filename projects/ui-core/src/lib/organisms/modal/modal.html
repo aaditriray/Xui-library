@@ -1,20 +1,13 @@
-<p>modal works!</p>
-@if (open()) {
-  <div class="xui-modal-backdrop" (mousedown)="dismissible() && dismissed.emit()">
-    <section
-      role="dialog"
-      aria-modal="true"
-      [attr.aria-labelledby]="titleId()"
-      class="xui-modal"
-      (mousedown)="$event.stopPropagation()"
-    >
-      <h2 [id]="titleId()">{{ title() }}</h2>
-      <ng-content />
-      @if (dismissible()) {
-        <button type="button" class="xui-modal-close" (click)="dismissed.emit()">
-          Close
-        </button>
-      }
-    </section>
-  </div>
-}
+<dialog
+  #dialog
+  class="xui-modal"
+  [attr.aria-labelledby]="titleId()"
+  (cancel)="handleCancel($event)"
+  (click)="dismissFromBackdrop($event)"
+>
+  <h2 [id]="titleId()">{{ title() }}</h2>
+  <ng-content />
+  @if (dismissible()) {
+    <button type="button" class="xui-modal-close" (click)="dismissed.emit()">Close</button>
+  }
+</dialog>

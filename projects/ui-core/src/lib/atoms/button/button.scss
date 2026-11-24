@@ -1,15 +1,12 @@
 .xui-button {
-  min-height: 44px;
   min-width: 44px;
   padding: 0.625rem 1rem;
   border: 2px solid transparent;
-  border-radius: 8px;
-  font: inherit;
+  border-radius: var(--xui-radius);
   font-weight: 700;
   cursor: pointer;
 }
-.xui-button--primary { background: #0057b8; color: #fff; }
-.xui-button--secondary { background: #fff; color: #174a7c; border-color: #174a7c; }
-.xui-button--danger { background: #b42318; color: #fff; }
-.xui-button:disabled { background: #e5e7eb; color: #667085; border-color: #667085; cursor: not-allowed; }
-.xui-button:focus-visible { outline: 3px solid #0b63ce; outline-offset: 3px; }
+.xui-button--primary { background: var(--xui-primary); color: #fff; }
+.xui-button--secondary { background: var(--xui-surface); color: var(--xui-primary-dark); border-color: var(--xui-primary-dark); }
+.xui-button--danger { background: var(--xui-danger); color: #fff; }
+.xui-button:disabled { background: var(--xui-border-disabled); color: var(--xui-border); border-color: var(--xui-border); cursor: not-allowed; }

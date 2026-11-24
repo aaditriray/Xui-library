@@ -1,0 +1,22 @@
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--xui-control-height);
+  padding: 0.5rem 0.75rem;
+  color: var(--xui-primary-dark);
+  font-weight: 700;
+}
+
+a[aria-current='page'] {
+  text-decoration-thickness: 3px;
+  text-underline-offset: 0.25rem;
+}
