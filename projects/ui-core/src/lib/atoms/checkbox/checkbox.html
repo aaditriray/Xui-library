@@ -1,0 +1,11 @@
+<p>checkbox works!</p>
+<label [for]="id()" class="xui-checkbox">
+  <input
+    [id]="id()"
+    type="checkbox"
+    [checked]="checked()"
+    [disabled]="disabled()"
+    (change)="checkedChange.emit($any($event.target).checked)"
+  />
+  <span>{{ label() }}</span>
+</label>

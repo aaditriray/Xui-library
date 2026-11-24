@@ -1,0 +1,57 @@
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<header>
+  <p class="brand" aria-label="XUI Library">XUI</p>
+</header>
+
+<main id="main-content">
+  <section aria-labelledby="page-title">
+    <h1 id="page-title">Accessible component examples</h1>
+    <p>WCAG 2.2 Level AA keyboard-first Angular components.</p>
+
+    <form (submit)="$event.preventDefault(); submit()">
+      <xui-form-field
+        label="Account details"
+        hint="Use a name that can be used to identify this account."
+        [invalid]="submitted() && name().length === 0"
+        [error]="submitted() && name().length === 0 ? 'Enter a name.' : ''"
+      >
+        <xui-textbox
+          id="display-name"
+          label="Display name"
+          [value]="name()"
+          [invalid]="submitted() && name().length === 0"
+          helpId="display-name-help"
+          errorId="display-name-error"
+          [required]="true"
+          (valueChange)="name.set($event)"
+        />
+        <span id="display-name-help" class="hint">This is visible to other users.</span>
+      </xui-form-field>
+
+      <xui-checkbox
+        id="terms"
+        label="I have read the accessibility requirements"
+        [checked]="consent()"
+        (checkedChange)="consent.set($event)"
+      />
+
+      <div class="actions">
+        <xui-button type="submit" label="Save" />
+        <xui-button type="button" label="Open modal" variant="secondary" (activated)="modalOpen.set(true)" />
+      </div>
+    </form>
+
+    @if (submitted()) {
+      <p class="status" role="status">The form was submitted.</p>
+    }
+  </section>
+</main>
+
+<xui-modal
+  [open]="modalOpen()"
+  title="Example dialog"
+  (dismissed)="modalOpen.set(false)"
+>
+  <p>This dialog demonstrates an accessible modal region.</p>
+</xui-modal>

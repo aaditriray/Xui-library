@@ -1,0 +1,23 @@
+.xui-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  background: rgb(23 43 77 / 72%);
+}
+.xui-modal {
+  width: min(32rem, 100%);
+  max-height: calc(100vh - 2rem);
+  overflow-y: auto;
+  box-sizing: border-box;
+  padding: 1.5rem;
+  border-radius: 12px;
+  background: #fff;
+  color: #172b4d;
+  box-shadow: 0 20px 50px rgb(23 43 77 / 30%);
+}
+.xui-modal h2 { margin-top: 0; }
+.xui-modal-close { min-height: 44px; margin-top: 1rem; padding: 0.625rem 1rem; border: 2px solid #174a7c; border-radius: 8px; background: #fff; color: #174a7c; font: inherit; font-weight: 700; }
+.xui-modal-close:focus-visible { outline: 3px solid #0b63ce; outline-offset: 3px; }

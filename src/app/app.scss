@@ -1,0 +1,21 @@
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -100px;
+  z-index: 20;
+  background: #fff;
+  color: #174a7c;
+  padding: 0.75rem 1rem;
+  border: 2px solid #174a7c;
+  border-radius: 8px;
+  font-weight: 700;
+}
+.skip-link:focus { top: 1rem; }
+header { padding: 1rem clamp(1rem, 4vw, 3rem); border-bottom: 1px solid #d0d5dd; }
+.brand { margin: 0; color: #174a7c; font-size: 1.25rem; font-weight: 800; }
+main { max-width: 52rem; margin: 0 auto; padding: clamp(1.5rem, 5vw, 4rem) 1rem; }
+h1 { color: #172b4d; line-height: 1.2; }
+form { display: grid; gap: 1.25rem; max-width: 32rem; margin-top: 2rem; }
+.actions { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+.hint { color: #475467; }
+.status { margin-top: 1.5rem; padding: 1rem; border-left: 4px solid #198754; background: #ecfdf3; color: #185c37; }

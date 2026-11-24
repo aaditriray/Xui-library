@@ -1,0 +1,13 @@
+<p>textbox works!</p>
+<label [for]="id()">{{ label() }}</label>
+<input
+  [id]="id()"
+  [type]="type()"
+  [value]="value()"
+  [autocomplete]="autocomplete()"
+  [attr.aria-describedby]="helpId() || errorId() || null"
+  [attr.aria-invalid]="invalid() ? 'true' : null"
+  [disabled]="disabled()"
+  [required]="required()"
+  (input)="valueChange.emit($any($event.target).value)"
+/>

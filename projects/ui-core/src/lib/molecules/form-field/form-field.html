@@ -1,0 +1,11 @@
+<p>form-field works!</p>
+<fieldset [attr.aria-invalid]="invalid() ? 'true' : null">
+  <legend>{{ label() }}</legend>
+  @if (hint()) {
+    <p class="hint">{{ hint() }}</p>
+  }
+  <ng-content />
+  @if (error()) {
+    <p class="error" role="alert">{{ error() }}</p>
+  }
+</fieldset>

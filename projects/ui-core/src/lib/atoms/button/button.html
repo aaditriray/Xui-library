@@ -1,0 +1,10 @@
+<p>button works!</p>
+<button
+  [type]="type()"
+  [disabled]="disabled()"
+  [attr.aria-pressed]="pressed()"
+  [class]="['xui-button', 'xui-button--' + variant()]"
+  (click)="activated.emit()"
+>
+  <ng-content>{{ label() }}</ng-content>
+</button>
